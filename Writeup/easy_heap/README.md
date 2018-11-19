@@ -1,0 +1,4 @@
+**easy_heap**
+     题目保护全开，在malloc的时候存在null-by-one漏洞，由于分配的堆块的大小都是0x100(加堆头)，所以null-by-one漏洞只会覆盖下个堆块的prev_inuse标志位为0。一般的利用思路是通过伪造prev_size的大小来构造overlap-chunk为所欲为，但是这种思路在这道题目里行不通，因为malloc在读取内容的时候‘\0’会截断而且堆块大小是0x100。
+        由于题目给的库是libc2.27，引入了tcache机制，tcache在分配完其中的7个堆块后如果再次分配，它会先从unsortedbin中把和要分配的堆块大小相同的堆块全部以单链表形式链入tcache的链表里然后再分配出来，如果unsortedbin中有三个及以上符合大小的堆块，当并入tcache时，你会发现中间的堆块其fd->bk以及bk->fd仍然指向它自身，利用点就是在这里，题目中恰好设置了堆块为0x100对齐，所以分配出来的堆块内容如果什么都不输那么它的“\0”终止符不会影响fd指针，在将中间的堆块重新malloc出来利用nullbyone漏洞修改下个堆块的previnuse位为0，然后填满tcache后free掉下个堆块，那么他就会和前面的堆块合并形成overlap-chunk，接下来泄漏libc地址，修改malloc_hook为one_gadget就能getshell了。
+	思路来自hitcon划水时的发现~

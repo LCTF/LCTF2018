@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>  
+    <head>  
+        <meta charset="utf-8">  
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+        <title>Travel</title>   
+        <link rel="stylesheet" href="static/bootstrap.min.css">  
+        <style>  
+            /*web background*/
+            html,body{
+                width:100%;
+                height:100%
+            }
+            body{
+                background:url("static/background.png") no-repeat;
+                background-size:cover;
+            }
+
+            .container{
+                display:table;  
+                height:100%;  
+            }
+  
+            .row{  
+                display:table-cell;  
+                vertical-align: middle;  
+            }  
+            /* centered columns styles */  
+            .row-centered {  
+                text-align:center;  
+            }  
+            .col-centered {  
+                display:inline-block;  
+                float:none;  
+                text-align:left;  
+                margin-right:-4px;  
+            }  
+        </style>  
+    </head>  
+  
+    <body> 
+        <div class="container">  
+            <div class="row row-centered">  
+                <div class="well col-md-6 col-centered">
+                    <form role="form" method="GET">
+                        <div class="form-group">
+                            <label for="name">Site:</label>
+                            <input type="text" class="form-control" name="url" placeholder="https://www.baidu.com/">
+                        </div>
+                        <button type="submit" class="btn btn-default">GO</button>
+                    </form>
+                </div>  
+            </div>  
+        </div>
+
+        <script src="static/jquery.min.js"></script>  
+        <script src="static/bootstrap.min.js"></script>  
+    </body>  
+</html>
