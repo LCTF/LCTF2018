@@ -1,0 +1,30 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="LCTF:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/LCTF_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="LCTF" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.5" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.7" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.5" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="LCTF/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,69 @@
+<html>
+<head>
+<title></title>
+<style>
+#submit {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 6px 20px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 13px;
+    margin-left:500px;
+}
+
+#submit:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+</style>
+</head>
+<script src = "./jquery-3.3.1.min.js"></script>
+<body>
+	<br>--------------------------------------------------------------------Comment area---------------------------------------------------------------------------------
+	<form id="form1" name = "form">
+Nickname：<input type="text" name="name" value="" style = "width:200px; height:30px"/><br />
+Contents：&nbsp;&nbsp;&nbsp;<textarea name="content" cols="45" rows="5" style = "width:1000px; height:400px"></textarea><br />
+	</form>
+	<button id = "submit" type="button" onclick="mysubmmit();">Submit</button>
+</body>
+<script>
+$.fn.serializeObject = function()  
+{  
+   var o = {};  
+   var a = this.serializeArray();  
+   $.each(a, function() {  
+       if (o[this.name]) {  
+           if (!o[this.name].push) {  
+               o[this.name] = [o[this.name]];  
+           }  
+           o[this.name].push(this.value || '');  
+       } else {  
+           o[this.name] = this.value || '';  
+       }  
+   });  
+   return o;  
+};
+
+
+function mysubmmit(){
+	var v = $("#form1").serializeObject();
+    $.ajax({
+        type: "POST",
+        datatype : "json",
+        url: "http://212.64.74.153:8080/LCTF/api",
+        data: JSON.stringify(v),
+        contentType:"application/json;charset=UTF-8",
+        crossDomain:true
+    });
+}
+
+</script>
+</html>

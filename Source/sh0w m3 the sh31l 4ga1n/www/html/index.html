@@ -1,0 +1,101 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<meta charset="utf-8"> 
+	<title>LCTF</title> 
+	<style type="text/css">
+		
+		body{
+			background-color: #000;
+		}
+
+		#name{
+			
+			margin-top: 10%;                   
+			text-align:center; 
+			font-family: Courier New, Courier, monospace;
+			font-size: 25px;
+  			font-weight: bold;
+  			line-height: 16px;
+  			-webkit-font-smoothing: antialiased;
+		}
+
+		#content{
+			color:#C0C0C0;
+			font-size: 20px;
+			font-weight: bold;
+			font-family: Courier New, Courier, monospace;
+			margin-top: 3%;
+			margin-left: auto;
+			margin-right: auto;
+			width : 500px;
+			height: 300px;
+			
+		}
+		a {
+			text-decoration:none
+		}
+		a:link {
+			color:#090; 
+		}
+		a:visited {
+			color:#090;
+		} 
+		a:hover{
+			color:#0f0;
+		}
+
+
+	</style>
+</head> 
+<body>
+
+	<div id = "name"><a href="./LCTF.php">T4lk 1s ch34p,sh0w m3 the sh31l</a></div>
+	<div id = "content">
+
+		<span id = "text"></span>
+
+	</div>
+</body> 
+<script>
+	let divTyping = document.getElementById('text')
+	let i = 0,
+	timer = 0,
+	str = '<br>Hello:<br>&nbsp;&nbsp;&nbsp;Some people have found the problem for me, I have fixed it, but they found that my comments box is fake. This time I can actually submit it. Can you getshell now?<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;----K0rz3n',
+	initString = '',
+	length = 0;
+	function typing () {
+		if (i < str.length) {
+			var theChar = str.charAt(i);                 
+        	var nextFourChars = str.substr(i,4);
+        	var nextFourChars1 = str.substr(i,6);
+        	if(nextFourChars == '<br>'){
+            	theChar  = '<br>';
+            	i+=4;
+        	}else if(nextFourChars1 == '&nbsp;'){
+        		theChar  = '&nbsp;';
+            	i+=6;
+        	}else{
+        		i++;
+        	}
+        	length = initString.length;
+        	if(length == 0){
+        		initString = initString + theChar + '_';
+        	}
+        	else{
+        		initString = initString.slice(0,length-1) + theChar + '_';
+        	}                                              
+			divTyping.innerHTML = initString; 
+			timer = setTimeout('typing()', 100)
+		}else {
+		  divTyping.innerHTML = initString.slice(0,length)
+		  clearTimeout(timer)
+		}
+	}
+
+	typing()
+	
+	
+
+</script> 
+</html>
