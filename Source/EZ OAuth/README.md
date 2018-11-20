@@ -18,7 +18,11 @@ git pull git@github.com:LCTF/LCTF2018.git
 mv LCTF2018/Source/EZ\ OAuth /var/www/ez_oauth
 cd /var/www/ez_oauth
 composer install
+cd ..
+chown -R www-data:www-data ez_oauth
 ```
+
+Note: Change the path (`/var/www/ez_oauth`) and webserver & CGI username (`www-data`) to your system environments.
 
 ## Configuration
 
