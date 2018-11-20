@@ -167,15 +167,17 @@ def getData():
 ## 第三关
 基本上除了有两组在第二个栈溢出获得控制流以外，基本上大家都是在push message里用堆漏洞获得程序控制流。我就讲一下如何在这道题里构建House of Spirit攻击。   
 在菜单里选择`1.push message`之后会让你先输入64位的`len`（`len`是`welcome`函数中声明的变量），再跳转到`leavemessage`函数，而`leavemessage`中的`buf`是我们要伪造的chunk的开头。我们先看看进入`leavemessage`函数后的栈分布：
-|       |       |
+
+|Item|Value|
 |:-----:|:-----:|
 |buf    |大小0x20|
 |.....  |........|
 |canary |大小0x8|
 |ebp    |大小0x8|
-|返回地址 |大小0x8|
-|choice2 |welecome的变量,始终为0，大小0x8，chunk对齐用|
+|返回地址|大小0x8|
+|choice2|welecome的变量,始终为0，大小0x8，chunk对齐用|
 |len|welecome的变量,值为输入值，大小0x8|
+
 在leavemessage中会将你的输入的信息记录到一个结构体中：
 ```
 struct MESSAGE{
