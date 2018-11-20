@@ -9,15 +9,12 @@ use Illuminate\Support\Facades\Cache;
 
 class WebAuth
 {
-    private static $user_whitelist;
 
     /**
      * Initialize all needed data.
      */
     public function __construct()
     {
-        if (!Cache::has('user_whitelist')) Cache::forever('user_whitelist', []);
-        self::$user_whitelist = (array) Cache::get('user_whitelist');
     }
 
     /**

@@ -9,15 +9,12 @@ use Illuminate\Support\Facades\Cache;
 
 class AdminAuth
 {
-    private static $admin_whitelist;
 
     /**
      * Initialize all needed data.
      */
     public function __construct()
     {
-        if (!Cache::has('user_whitelist')) Cache::put('user_whitelist', []);
-        self::$admin_whitelist = (array) config('app.USER.ADMIN_WHITELIST');
     }
 
     /**
