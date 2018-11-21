@@ -25,7 +25,7 @@ Source code, writeups and exps in LCTF2018.
 | --------- | ------------------------------------------------------------ | ------ |
 | easy_heap | Writeup: [https://github.com/LCTF/LCTF2018/tree/master/Writeup/easy_heap](https://github.com/LCTF/LCTF2018/tree/master/Writeup/easy_heap)<br />Source: [https://github.com/LCTF/LCTF2018/tree/master/Source/easy_heap](https://github.com/LCTF/LCTF2018/tree/master/Source/easy_heap) | 17     |
 | pwn4fun   | Writeup: [https://github.com/LCTF/LCTF2018/tree/master/Writeup/pwn4fun](https://github.com/LCTF/LCTF2018/tree/master/Writeup/pwn4fun)<br />Source: [https://github.com/LCTF/LCTF2018/tree/master/Source/pwn4fun](https://github.com/LCTF/LCTF2018/tree/master/Source/pwn4fun) | 7      |
-| just_pwn  | Writeup: [https://github.com/LCTF/LCTF2018/tree/master/Writeup/just_pwn](https://github.com/LCTF/LCTF2018/tree/master/Writeup/just_pwn)<br />Source: [https://github.com/LCTF/LCTF2018/tree/master/Source/just_pwn] | 6      |
+| just_pwn  | Writeup: [https://github.com/LCTF/LCTF2018/tree/master/Writeup/just_pwn](https://github.com/LCTF/LCTF2018/tree/master/Writeup/just_pwn)<br />Source: [https://github.com/LCTF/LCTF2018/tree/master/Source/just_pwn](https://github.com/LCTF/LCTF2018/tree/master/Source/just_pwn) | 6      |
 | echos     | Writeup:  [https://github.com/LCTF/LCTF2018/tree/master/Writeup/Satori-Challenge#Echos](https://github.com/LCTF/LCTF2018/tree/master/Writeup/Satori-Challenge#Echos)<br />Source: [https://github.com/LCTF/LCTF2018/tree/master/Source/Satori-Challenge/echos](https://github.com/LCTF/LCTF2018/tree/master/Source/Satori-Challenge/echos) | 2      |
 
 
